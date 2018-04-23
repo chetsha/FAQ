@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -25,8 +23,7 @@ Route::get('/user/{user_id}/profile/{profile_id}', 'ProfileController@show')->na
 
 Route::get('/question/{question_id}/answer/{answer_id}', 'AnswerController@show')->name('answer.show');
 
+
 Route::resources([
     'question' => 'QuestionController',
 ]);
-
-
