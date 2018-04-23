@@ -36,7 +36,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div>
+
                         </div>
                         <div class="card-footer">
                             <div class="float-right">
