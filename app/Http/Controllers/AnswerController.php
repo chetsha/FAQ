@@ -121,8 +121,9 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($answer);
 
-        $answer->delete();
-        return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Delete');
+
+       $answer->delete();
+       return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Delete');
 
     }
 }

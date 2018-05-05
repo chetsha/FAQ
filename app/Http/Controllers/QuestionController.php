@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 
+
 class QuestionController extends Controller
 {
     public function __construct()
@@ -106,6 +107,7 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
+
         $question->delete();
         return redirect()->route('home')->with('message', 'Deleted');
     }}
