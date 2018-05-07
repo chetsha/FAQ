@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'FAQ') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,13 +22,13 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light navbar-FAQ">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
 
 
             @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'FAQ') }}
+                    {{ config('app.name', 'Laravel') }}
                 </a>
             @else
                 <a class="navbar-brand" href="{{ route('home') }}">

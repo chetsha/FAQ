@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6e5712b4e409de1c0d62c33a5f08c7d",
+    "content-hash": "489b4fed09d06a8b6a529cdc470dbc9b",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1852,6 +1852,52 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
+        },
+        {
+            "name": "sofa/eloquent-cascade",
+            "version": "5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jarektkaczyk/eloquent-cascade.git",
+                "reference": "340a9dd3ddf052689f15bd64b4757a16ef383deb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jarektkaczyk/eloquent-cascade/zipball/340a9dd3ddf052689f15bd64b4757a16ef383deb",
+                "reference": "340a9dd3ddf052689f15bd64b4757a16ef383deb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.5",
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sofa\\EloquentCascade\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jarek Tkaczyk",
+                    "email": "jarek@softonsofa.com",
+                    "homepage": "http://softonsofa.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cascading deletes for Laravel Eloquent ORM.",
+            "keywords": [
+                "cascade",
+                "cascading deletes",
+                "deletes",
+                "eloquent",
+                "laravel"
+            ],
+            "time": "2018-03-04T15:20:50+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

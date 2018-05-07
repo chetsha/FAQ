@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-
 
 class QuestionController extends Controller
 {
     public function __construct()
     {
-        $this ->middleware('auth');
-
+        $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -33,10 +29,13 @@ class QuestionController extends Controller
      */
     public function create()
     {
+
         $question = new Question;
         $edit = FALSE;
         return view('questionForm', ['question' => $question,'edit' => $edit  ]);
+
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -48,16 +47,26 @@ class QuestionController extends Controller
         $input = $request->validate([
             'body' => 'required|min:5',
         ], [
+
             'body.required' => 'Body is required',
             'body.min' => 'Body must be at least 5 characters',
+
         ]);
         $input = request()->all();
+
         $question = new Question($input);
         $question->user()->associate(Auth::user());
         $question->save();
+
         return redirect()->route('home')->with('message', 'IT WORKS!');
+
+
+
         // return redirect()->route('questions.show', ['id' => $question->id]);
+
     }
+
+
     /**
      * Display the specified resource.
      *
@@ -66,7 +75,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        return view('question')->with('question',$question);
+        return view('question')->with('question', $question);
     }
 
     /**
@@ -80,6 +89,7 @@ class QuestionController extends Controller
         $edit = TRUE;
         return view('questionForm', ['question' => $question, 'edit' => $edit ]);
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -89,16 +99,22 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
+
         $input = $request->validate([
             'body' => 'required|min:5',
         ], [
+
             'body.required' => 'Body is required',
             'body.min' => 'Body must be at least 5 characters',
+
         ]);
+
         $question->body = $request->body;
         $question->save();
+
         return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -107,7 +123,8 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-
         $question->delete();
         return redirect()->route('home')->with('message', 'Deleted');
-    }}
+
+    }
+}
