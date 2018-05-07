@@ -28,7 +28,7 @@ class AnswerController extends Controller
     {
         $answer = new Answer;
         $edit = FALSE;
-        return view('answerForm', ['answer' => $answer,'edit' => $edit, 'question' =>$question  ]);
+        return view('answerForm', ['answer' => $answer,'edit' => $edit, 'question' =>$question,]);
     }
 
     /**
