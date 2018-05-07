@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Http\Controllers\ProfileController;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,4 +22,5 @@ class profileTest extends TestCase
         $profile->user()->associate($user);
         $this->assertTrue($profile->save());
     }
+
 }

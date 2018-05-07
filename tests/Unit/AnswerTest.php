@@ -24,5 +24,24 @@ class AnswerTest extends TestCase
         $answer->user()->associate($user);
         $answer->question()->associate($question);
         $this->assertTrue($answer->save());
+
     }
+
+    public function testDelete()
+    {
+
+        $user = $user = factory(\App\User::class)->make();
+        $user->delete();
+        $question = factory(\App\Question::class)->make();
+        $question->user()->associate($user);
+        $question->delete();
+        $answer = factory(\App\Answer::class)->make();
+        $answer->user()->associate($user);
+        $answer->question()->associate($question);
+        $this->assertTrue($answer->Delete());
+
+    }
+
+
+
 }
